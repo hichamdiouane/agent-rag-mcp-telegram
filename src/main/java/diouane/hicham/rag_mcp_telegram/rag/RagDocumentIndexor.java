@@ -1,9 +1,10 @@
-package diouane.hicham.mcpserver.rag_tool;
+package diouane.hicham.rag_mcp_telegram.rag;
 
 import org.springframework.ai.document.Document;
 import org.springframework.ai.embedding.EmbeddingModel;
 import org.springframework.ai.transformer.splitter.TextSplitter;
 import org.springframework.ai.transformer.splitter.TokenTextSplitter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.Resource;
@@ -27,7 +28,7 @@ public class RagDocumentIndexor {
     @Bean
     public SimpleVectorStore getVectorStore(EmbeddingModel embeddingModel) {
         SimpleVectorStore vectorStore = SimpleVectorStore.builder(embeddingModel).build();
-        Path path = Paths.get("src","main","resources","knowledge base");
+        Path path = Paths.get("src","main","resources","knowledge_base");
         File file = new File(path.toFile(), storeFileName);
         if(!file.exists()) {
             PagePdfDocumentReader reader = new PagePdfDocumentReader(pdfResource);

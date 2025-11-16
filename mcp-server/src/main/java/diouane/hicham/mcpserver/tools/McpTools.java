@@ -1,4 +1,4 @@
-package diouane.hicham.mcpserver.mcp_tools;
+package diouane.hicham.mcpserver.tools;
 
 import org.springaicommunity.mcp.annotation.McpArg;
 import org.springaicommunity.mcp.annotation.McpTool;
@@ -16,7 +16,7 @@ public class McpTools {
     @McpTool(description = "Get All Employees")
     public List<Employee> getAllEmployees() {
         return List.of(
-                new Employee("Hassan", 12300, 4),
+                new Employee("Hicham", 12300, 4),
                 new Employee("Mohamed", 34000, 1),
                 new Employee("Imane", 23000, 10)
         );
